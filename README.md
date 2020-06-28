@@ -1,1 +1,2 @@
-# DoubanMovieRecommendationSystem
+#### 运行GUI文件夹下的main.py文件就是完整的程序
+
