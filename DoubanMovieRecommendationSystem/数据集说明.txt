@@ -1,0 +1,3 @@
+users_info.csv —— 用户名、密码、用户喜好的电影类型
+doubanMovies.csv —— 电影数据集
+douban_users.csv —— 用户数据
