@@ -10,7 +10,7 @@
 
 :one: 爬虫模块：request库、json库、MySQL 
 
-:two: 推荐系统模块：基于物品的协同过滤算法（ItemCF）
+:two: 推荐系统模块：基于物品的协同过滤算法（ItemCF 算法）
 
 :three: GUI模块：PyQt5
 
@@ -25,6 +25,34 @@
 项目开发时间：2020-05-01至2020-05-13
 
 版本号：1.0.0
+
+
+
+## :mag_right: ​Algorithm
+
+ItemCF 算法不利用物品的内容属性计算物品之间的相似度，而是通过分析用户的行为记录计算物品之间的相似度。ItemCF 算法认为，物品 A 和物品 B 具有很大的相似度是因为喜欢物品 A 的用户大都也喜欢物品 B。
+
+ 
+
+#### **ItemCF 算法步骤：**
+
+\-    计算物品之间的相似度。
+
+\-    根据物品的相似度和用户的历史行为给用户生成推荐列表。
+
+
+
+简单来说，ItemCF算法给用户推荐那些和他们之前喜欢的物品相似的物品。
+
+
+
+##### 举个例子：
+
+| **用户**/**物品** | **物品A** | **物品B** |     **物品C**     |
+| :---------------: | :-------: | :-------: | :---------------: |
+|       用户A       |     √     |           |         √         |
+|       用户B       |     √     |     √     |         √         |
+|       用户C       |     √     |           | 与物品A相似，推荐 |
 
 
 
@@ -80,9 +108,20 @@
 
 
 
+<img src="https://github.com/Giyn/DoubanMovieRecommendationSystem/blob/master/Screenshot/%E6%88%90%E5%8A%9F%E6%B3%A8%E5%86%8C.png?raw=true" alt="成功注册.png" style="zoom: 67%;" />
+
+
+
 <img src="https://github.com/Giyn/DoubanMovieRecommendationSystem/blob/master/Screenshot/%E7%94%A8%E6%88%B7%E7%9A%84%E5%86%B7%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98.png?raw=true" alt="用户的冷启动问题.png" style="zoom: 50%;" />
 
 
 
 <img src="https://github.com/Giyn/DoubanMovieRecommendationSystem/blob/master/Screenshot/%E7%94%A8%E6%88%B7%E7%9A%84%E5%86%B7%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98%EF%BC%88%E6%B5%8B%E8%AF%95%EF%BC%89.png?raw=true" alt="用户的冷启动问题（测试）.png" style="zoom: 67%;" />
 
+
+
+##  :heavy_exclamation_mark: Notice
+
+本软件仅供学习与参考，请勿用于商业用途
+
+Copyright 许继元
