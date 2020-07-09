@@ -2,7 +2,7 @@
 
 
 
-## **:clipboard: Introduction**
+## :blue_book: Introduction
 
 豆瓣电影推荐系统——通过爬取电影数据和用户数据，再利用所爬取的数据设计并实现相关推荐算法对用户进行电影推荐。然后设计出图形用户界面(GUI)进行交互，封装成电影推荐软件，针对数据集中的用户推荐相关电影。
 
@@ -16,7 +16,7 @@
 
 
 
-## :eyes: ​Information
+## :smile: Information
 
 开发者：许继元
 
