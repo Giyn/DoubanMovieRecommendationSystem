@@ -16,7 +16,7 @@
 
 
 
-## :point_right: Instructions
+## :point_right: Instruction
 
 运行GUI文件夹中的 `main.py` 文件即可。
 
