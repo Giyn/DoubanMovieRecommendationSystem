@@ -12,7 +12,10 @@ import time
 
 import pandas as pd
 import requests
+from fake_useragent import UserAgent
 from lxml import etree
+
+ua = UserAgent()
 
 
 def get_html(url):

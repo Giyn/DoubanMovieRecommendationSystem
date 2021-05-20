@@ -11,8 +11,8 @@ import time
 
 import pandas as pd
 import requests
-from lxml import etree
 from fake_useragent import UserAgent
+from lxml import etree
 
 ua = UserAgent()
 
