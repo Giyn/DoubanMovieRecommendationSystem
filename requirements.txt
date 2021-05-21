@@ -1,0 +1,8 @@
+pandas
+numpy
+sklearn
+pymysql
+PyQt5
+requests
+fake_useragent
+lxml
