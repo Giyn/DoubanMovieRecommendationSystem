@@ -16,7 +16,7 @@
 
 :three: GUI 模块：PyQt5
 
-**开发环境：**Python 3.7.7
+**开发环境：Python 3.7.7**
 
 ## :point_right: Instruction
 
