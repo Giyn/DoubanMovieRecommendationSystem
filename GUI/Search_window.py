@@ -6,21 +6,28 @@ Created on Thu May 14 01:30:22 2020
 """
 
 import sys
+
 import pandas as pd
-from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QPushButton, QTextBrowser, QTableWidgetItem, \
-                            QVBoxLayout, QHBoxLayout, QLineEdit, QTableWidget, QHeaderView
 from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QHBoxLayout
+from PyQt5.QtWidgets import QLabel
+from PyQt5.QtWidgets import QLineEdit
+from PyQt5.QtWidgets import QPushButton
+from PyQt5.QtWidgets import QTextBrowser
+from PyQt5.QtWidgets import QVBoxLayout
+from PyQt5.QtWidgets import QWidget
 
 
 class SearchWindow(QWidget):
     def __init__(self):
-        super(SearchWindow, self).__init__() # 使用super函数可以实现子类使用父类的方法
+        super(SearchWindow, self).__init__()  # 使用super函数可以实现子类使用父类的方法
         self.setWindowTitle("电影搜索")
-        self.setWindowIcon(QIcon('../douban.jpg')) # 设置窗口图标
-        self.resize(600,800)
+        self.setWindowIcon(QIcon('../douban.jpg'))  # 设置窗口图标
+        self.resize(600, 800)
         # 电影信息
         self.movies_df = pd.read_csv('../data/doubanMovies.csv', encoding='utf-8')
-        self.movies_df = self.movies_df.iloc[:,[0,1,6,15,16]]
+        self.movies_df = self.movies_df.iloc[:, [0, 1, 6, 15, 16]]
         self.movies_df = self.movies_df.drop_duplicates(subset='url')
         self.movies_df = self.movies_df.rename(columns={'Unnamed: 0': 'Movie_ID'})
 
@@ -39,10 +46,9 @@ class SearchWindow(QWidget):
 
         self.v_layout.addLayout(self.h_layout)
         self.v_layout.addWidget(self.search_browser)
-        
+
         self.setLayout(self.v_layout)
-        
-    
+
     # 模糊搜索功能
     def Fuzzy_search(self, keyword):
         self.search_browser.clear()
@@ -70,6 +76,7 @@ class SearchWindow(QWidget):
                 self.search_browser.append(self.content)
         except:
             pass
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

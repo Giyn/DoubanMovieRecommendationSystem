@@ -5,9 +5,9 @@ Created on Sat May  9 19:20:24 2020
 @author: 许继元
 """
 
-import pymysql
 import csv
 
+import pymysql
 
 # 连接本地数据库
 conn = pymysql.connect(host='localhost',
@@ -15,9 +15,9 @@ conn = pymysql.connect(host='localhost',
                        passwd='xjyxjy0723',
                        charset='utf8')
 
-cur = conn.cursor() # 创建一个可以执行SQL语句的游标对象
-cur.execute("create database movie") # 创建数据库
-cur.execute("use movie") # 使用数据库
+cur = conn.cursor()  # 创建一个可以执行SQL语句的游标对象
+cur.execute("create database movie")  # 创建数据库
+cur.execute("use movie")  # 使用数据库
 
 # 创建表
 sql_create = """
@@ -50,14 +50,13 @@ except Exception as e:
     conn.rollback()
     print('数据库创建操作错误回滚')
 
-
 with open('doubanMovies.csv', 'r', encoding='utf-8') as f:
     read = csv.reader(f)
     for each in list(read)[1:]:
         i = tuple(each)
-        sql = "INSERT INTO douban_movies VALUES" + str(i) # 使用SQL语句添加数据
-        cur.execute(sql) # 执行SQL语句
-    
-    conn.commit() # 提交数据
-    cur.close() # 关闭游标
-    conn.close() # 关闭数据库
+        sql = "INSERT INTO douban_movies VALUES" + str(i)  # 使用SQL语句添加数据
+        cur.execute(sql)  # 执行SQL语句
+
+    conn.commit()  # 提交数据
+    cur.close()  # 关闭游标
+    conn.close()  # 关闭数据库
