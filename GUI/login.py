@@ -25,7 +25,7 @@ class Login(QWidget):
         super().__init__()  # 调用基类方法
         self.USER_PWD = dict()
         self.USER_Label = dict()
-        f = open('../data/users_info.csv', 'a+', encoding='utf-8')
+        f = open('../Data/users_info.csv', 'a+', encoding='utf-8')
         f.seek(0)  # 文件指针指向开头
         for line in f:
             self.USER_PWD[line.split(',')[0]] = line.split(',')[1].strip()  # 存入用户名密码
@@ -36,7 +36,7 @@ class Login(QWidget):
         f.close()
         self.resize(400, 200)  # 窗口尺寸
         self.setWindowTitle('豆瓣电影推荐系统')  # 设置窗口标题
-        self.setWindowIcon(QIcon('../data/douban.jpg'))  # 设置窗口图标
+        self.setWindowIcon(QIcon('../Data/douban.jpg'))  # 设置窗口图标
         self.user_label = QLabel('用户名:', self)  # 文本设置
         self.pwd_label = QLabel('密码:', self)
         self.user_line = QLineEdit(self)  # 单行文本编辑器
@@ -91,7 +91,7 @@ class Login(QWidget):
 
     def show_signin_page_func(self):
         self.signin_page.exec_()
-        f = open('../data/users_info.csv', 'a+', encoding='utf-8')
+        f = open('../Data/users_info.csv', 'a+', encoding='utf-8')
         f.seek(0)  # 文件指针指向开头
         for line in f:
             self.USER_PWD[line.split(',')[0]] = line.split(',')[1].strip()  # 存入用户名密码

@@ -23,10 +23,10 @@ class SearchWindow(QWidget):
     def __init__(self):
         super(SearchWindow, self).__init__()  # 使用super函数可以实现子类使用父类的方法
         self.setWindowTitle("电影搜索")
-        self.setWindowIcon(QIcon('../data/douban.jpg'))  # 设置窗口图标
+        self.setWindowIcon(QIcon('../Data/douban.jpg'))  # 设置窗口图标
         self.resize(600, 800)
         # 电影信息
-        self.movies_df = pd.read_csv('../data/douban_movies.csv', encoding='utf-8')
+        self.movies_df = pd.read_csv('../Data/douban_movies.csv', encoding='utf-8')
         self.movies_df = self.movies_df.iloc[:, [0, 1, 6, 15, 16]]
         self.movies_df = self.movies_df.drop_duplicates(subset='url')
         self.movies_df = self.movies_df.rename(columns={'Unnamed: 0': 'Movie_ID'})

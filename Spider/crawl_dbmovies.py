@@ -50,8 +50,8 @@ def crawl_movies(num):
             if dicts != {"msg": "检测到有异常请求从您的IP发出，请登录再试!", "r": 1}:
                 break
         try:
-            movies_lists.append(dicts['data'])
-            print("成功获取20部电影的网页: ", dicts['data'])
+            movies_lists.append(dicts['Data'])
+            print("成功获取20部电影的网页: ", dicts['Data'])
         except Exception as e:
             print("获取资源失败, 原因是 %s" % e)
 

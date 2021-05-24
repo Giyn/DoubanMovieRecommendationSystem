@@ -21,11 +21,11 @@ class MovieDetailed(QWidget):
     def __init__(self, name):
         super(MovieDetailed, self).__init__()  # 使用super函数可以实现子类使用父类的方法
         self.setWindowTitle("电影详细信息")
-        self.setWindowIcon(QIcon('../data/douban.jpg'))  # 设置窗口图标
+        self.setWindowIcon(QIcon('../Data/douban.jpg'))  # 设置窗口图标
         self.resize(1400, 800)
         self.name = name
         # 电影信息
-        self.movies_detailed = pd.read_csv('../data/douban_movies.csv', encoding='utf-8')
+        self.movies_detailed = pd.read_csv('../Data/douban_movies.csv', encoding='utf-8')
         self.movies_detailed = self.movies_detailed.iloc[:, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]]
 
         self.pix = QPixmap(r'../MoviePosters/' + "{}".format(self.name) + '.jpg')

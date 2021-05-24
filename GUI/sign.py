@@ -23,7 +23,7 @@ class SigninPage(QDialog):
         super().__init__()
         self.USER_PWD = dict()
         self.USER_Label = dict()
-        f = open('../data/users_info.csv', 'a+', encoding='utf-8')
+        f = open('../Data/users_info.csv', 'a+', encoding='utf-8')
         f.seek(0)  # 文件指针指向开头
         for line in f:
             self.USER_PWD[line.split(',')[0]] = line.split(',')[1].strip()  # 存入用户名密码
@@ -33,7 +33,7 @@ class SigninPage(QDialog):
                 self.USER_Label[line.split(',')[0]] = None
         f.close()
         self.setWindowTitle('注册')  # 设置窗口标题
-        self.setWindowIcon(QIcon('../data/douban.jpg'))  # 设置窗口图标
+        self.setWindowIcon(QIcon('../Data/douban.jpg'))  # 设置窗口图标
         self.signin_user_label = QLabel('用户名:', self)  # 文本设置
         self.signin_pwd_label = QLabel('密码:', self)
         self.signin_pwd2_label = QLabel('密码:', self)
@@ -91,7 +91,7 @@ class SigninPage(QDialog):
             QMessageBox.critical(self, '通知', '两次密码不一致!')
         elif self.signin_user_line.text() not in self.USER_PWD:
             QMessageBox.information(self, '通知', '成功注册!')
-            f = open('../data/users_info.csv', 'a+', encoding='utf-8')
+            f = open('../Data/users_info.csv', 'a+', encoding='utf-8')
             info = self.signin_user_line.text() + ',' + self.signin_pwd_line.text() + '\n'
             f.write(info)
             f.close()

@@ -29,12 +29,12 @@ class MainWindow(QWidget):
     def __init__(self, user):
         super(MainWindow, self).__init__()  # 使用super函数可以实现子类使用父类的方法
         self.setWindowTitle("豆瓣电影推荐系统")
-        self.setWindowIcon(QIcon('../data/douban.jpg'))  # 设置窗口图标
+        self.setWindowIcon(QIcon('../Data/douban.jpg'))  # 设置窗口图标
         self.resize(1400, 800)
 
-        self.user_df = pd.read_csv('../data/douban_users.csv')
+        self.user_df = pd.read_csv('../Data/douban_users.csv')
         self.user_df = self.user_df.iloc[:, [1, 2, 3]]
-        self.movies_df = pd.read_csv('../data/douban_movies.csv', encoding='utf-8')
+        self.movies_df = pd.read_csv('../Data/douban_movies.csv', encoding='utf-8')
         self.movies_df = self.movies_df.iloc[:, [0, 1, 6, 15, 16]]
         self.movies_df = self.movies_df.drop_duplicates(subset='url')
         self.movies_df = self.movies_df.rename(columns={'Unnamed: 0': 'Movie_ID'})
@@ -44,7 +44,7 @@ class MainWindow(QWidget):
 
         self.USER_PWD = dict()
         self.USER_Label = dict()
-        f = open('../data/users_info.csv', 'a+', encoding='utf-8')
+        f = open('../Data/users_info.csv', 'a+', encoding='utf-8')
         f.seek(0)  # 文件指针指向开头
         for line in f:
             self.USER_PWD[line.split(',')[0]] = line.split(',')[1].strip()  # 存入用户名密码
