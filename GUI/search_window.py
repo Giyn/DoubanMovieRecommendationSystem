@@ -26,7 +26,7 @@ class SearchWindow(QWidget):
         self.setWindowIcon(QIcon('../douban.jpg'))  # 设置窗口图标
         self.resize(600, 800)
         # 电影信息
-        self.movies_df = pd.read_csv('../data/doubanMovies.csv', encoding='utf-8')
+        self.movies_df = pd.read_csv('../data/douban_movies.csv', encoding='utf-8')
         self.movies_df = self.movies_df.iloc[:, [0, 1, 6, 15, 16]]
         self.movies_df = self.movies_df.drop_duplicates(subset='url')
         self.movies_df = self.movies_df.rename(columns={'Unnamed: 0': 'Movie_ID'})

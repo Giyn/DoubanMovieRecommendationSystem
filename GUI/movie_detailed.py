@@ -25,7 +25,7 @@ class MovieDetailed(QWidget):
         self.resize(1400, 800)
         self.name = name
         # 电影信息
-        self.movies_detailed = pd.read_csv('../data/doubanMovies.csv', encoding='utf-8')
+        self.movies_detailed = pd.read_csv('../data/douban_movies.csv', encoding='utf-8')
         self.movies_detailed = self.movies_detailed.iloc[:, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]]
 
         self.pix = QPixmap(r'../MoviePosters/' + "{}".format(self.name) + '.jpg')

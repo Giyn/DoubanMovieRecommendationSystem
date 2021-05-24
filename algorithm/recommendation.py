@@ -16,7 +16,7 @@ user_df = pd.read_csv('../data/douban_users.csv')
 user_df = user_df.iloc[:, [1, 2, 3]]
 
 # 电影信息
-movies_df = pd.read_csv('../data/doubanMovies.csv', encoding='utf-8')
+movies_df = pd.read_csv('../data/douban_movies.csv', encoding='utf-8')
 movies_df = movies_df.iloc[:, [0, 1, 5, 6, 7, 8, 9, 12, 15, 16]]
 movies_df = movies_df.drop_duplicates(subset='url')
 movies_df = movies_df.rename(columns={'Unnamed: 0': 'Movie_ID'})

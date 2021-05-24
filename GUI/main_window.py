@@ -19,8 +19,8 @@ from PyQt5.QtWidgets import QTableWidgetItem
 from PyQt5.QtWidgets import QVBoxLayout
 from PyQt5.QtWidgets import QWidget
 
-import Recommendation
-import Search_window
+import recommendation
+import search_window
 from movie_detailed_search import MovieDetailedSearch
 from user_center import UserCenter
 
@@ -34,7 +34,7 @@ class MainWindow(QWidget):
 
         self.user_df = pd.read_csv('../data/douban_users.csv')
         self.user_df = self.user_df.iloc[:, [1, 2, 3]]
-        self.movies_df = pd.read_csv('../data/doubanMovies.csv', encoding='utf-8')
+        self.movies_df = pd.read_csv('../data/douban_movies.csv', encoding='utf-8')
         self.movies_df = self.movies_df.iloc[:, [0, 1, 6, 15, 16]]
         self.movies_df = self.movies_df.drop_duplicates(subset='url')
         self.movies_df = self.movies_df.rename(columns={'Unnamed: 0': 'Movie_ID'})
@@ -70,8 +70,8 @@ class MainWindow(QWidget):
         self.movie_detailed_button.clicked.connect(self.movie_detailed)
         self.search_button = QPushButton("电影搜索", self)
         self.search_button.clicked.connect(self.search)
-        self.hot_rec_movies = Recommendation.rec_hot_movies()  # 热门电影
-        self.rec_movies = Recommendation.find_user_like(self.user)  # 推荐电影
+        self.hot_rec_movies = recommendation.rec_hot_movies()  # 热门电影
+        self.rec_movies = recommendation.find_user_like(self.user)  # 推荐电影
 
         self.v1_layout = QVBoxLayout()
         self.v2_layout = QVBoxLayout()
@@ -167,7 +167,7 @@ class MainWindow(QWidget):
 
     # 搜索功能
     def search(self):
-        self.search_func = Search_window.SearchWindow()
+        self.search_func = search_window.SearchWindow()
         self.search_func.show()
 
     def show_user_center(self, user, num, label):

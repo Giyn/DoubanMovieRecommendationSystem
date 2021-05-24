@@ -50,7 +50,7 @@ except Exception as e:
     conn.rollback()
     print('数据库创建操作错误回滚')
 
-with open('doubanMovies.csv', 'r', encoding='utf-8') as f:
+with open('douban_movies.csv', 'r', encoding='utf-8') as f:
     read = csv.reader(f)
     for each in list(read)[1:]:
         i = tuple(each)

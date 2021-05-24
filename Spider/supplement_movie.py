@@ -298,7 +298,7 @@ def save_to_csv(movies):
             'style3', 'country', 'language', 'date', 'duration', 'introduction', 'dataID', 'url',
             'pic']  # 列索引
     MOVIES = pd.DataFrame(data=movies, columns=item)  # 转换为DataFrame数据格式
-    MOVIES.to_csv('doubanMovies.csv', mode='a', encoding='utf-8')  # 存入csv文件
+    MOVIES.to_csv('douban_movies.csv', mode='a', encoding='utf-8')  # 存入csv文件
 
 
 if __name__ == '__main__':

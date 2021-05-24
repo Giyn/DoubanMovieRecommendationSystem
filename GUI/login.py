@@ -15,8 +15,8 @@ from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtWidgets import QVBoxLayout
 from PyQt5.QtWidgets import QWidget
 
-from MainWindow import MainWindow
-from Sign import SigninPage
+from main_window import MainWindow
+from sign import SigninPage
 
 
 # 登录窗口

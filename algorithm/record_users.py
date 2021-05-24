@@ -12,7 +12,7 @@ user_df = pd.read_csv('douban_users.csv')
 user_df = user_df.iloc[:, [1, 2, 3]]
 
 # 电影信息
-movies_df = pd.read_csv('doubanMovies.csv', encoding='utf-8')
+movies_df = pd.read_csv('douban_movies.csv', encoding='utf-8')
 movies_df = movies_df.iloc[:, [0, 1, 6, 7, 8, 9, 15, 16]]
 movies_df = movies_df.rename(columns={'Unnamed: 0': 'Movie_ID'})
 
