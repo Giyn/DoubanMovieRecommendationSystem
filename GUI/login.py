@@ -36,7 +36,7 @@ class Login(QWidget):
         f.close()
         self.resize(400, 200)  # 窗口尺寸
         self.setWindowTitle('豆瓣电影推荐系统')  # 设置窗口标题
-        self.setWindowIcon(QIcon('../douban.jpg'))  # 设置窗口图标
+        self.setWindowIcon(QIcon('../data/douban.jpg'))  # 设置窗口图标
         self.user_label = QLabel('用户名:', self)  # 文本设置
         self.pwd_label = QLabel('密码:', self)
         self.user_line = QLineEdit(self)  # 单行文本编辑器

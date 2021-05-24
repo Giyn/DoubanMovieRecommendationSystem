@@ -33,7 +33,7 @@ class SigninPage(QDialog):
                 self.USER_Label[line.split(',')[0]] = None
         f.close()
         self.setWindowTitle('注册')  # 设置窗口标题
-        self.setWindowIcon(QIcon('../douban.jpg'))  # 设置窗口图标
+        self.setWindowIcon(QIcon('../data/douban.jpg'))  # 设置窗口图标
         self.signin_user_label = QLabel('用户名:', self)  # 文本设置
         self.signin_pwd_label = QLabel('密码:', self)
         self.signin_pwd2_label = QLabel('密码:', self)

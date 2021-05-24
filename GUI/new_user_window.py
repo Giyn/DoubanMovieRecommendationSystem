@@ -26,7 +26,7 @@ class NewMainWindow(QWidget):
     def __init__(self, movies):
         super(NewMainWindow, self).__init__()  # 使用super函数可以实现子类使用父类的方法
         self.setWindowTitle("豆瓣电影推荐系统")
-        self.setWindowIcon(QIcon('../douban.jpg'))  # 设置窗口图标
+        self.setWindowIcon(QIcon('../data/douban.jpg'))  # 设置窗口图标
         self.resize(1400, 800)
         self.user_df = pd.read_csv('../data/douban_users.csv')
         self.user_df = self.user_df.iloc[:, [1, 2, 3]]

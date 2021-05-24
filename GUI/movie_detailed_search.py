@@ -22,7 +22,7 @@ class MovieDetailedSearch(QWidget):
     def __init__(self):
         super(MovieDetailedSearch, self).__init__()  # 使用super函数可以实现子类使用父类的方法
         self.setWindowTitle("电影详细信息")
-        self.setWindowIcon(QIcon('../douban.jpg'))  # 设置窗口图标
+        self.setWindowIcon(QIcon('../data/douban.jpg'))  # 设置窗口图标
         self.resize(500, 150)
 
         self.search_label = QLabel("请输入完整的电影名称: ", self)
